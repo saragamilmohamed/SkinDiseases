@@ -6,12 +6,5 @@ numpy
 Pillow
 flask
 keras
-tensorflowrequests
-beautifulsoup4
-gunicorn
-streamlit
-numpy
-Pillow
-flask
-keras
 tensorflow
+
