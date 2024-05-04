@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 def preprocessing(image):
     image = Image.open(image)
-    image = image.resize((192,192))
+    image = image.resize((224,224))
     image_arr = np.array(image.convert('RGB'))
     image_arr = np.expand_dims(image_arr, axis=0)  # Add batch dimension
     return image_arr.astype(np.float32)  # Ensure float32 dtype for tf.lite.Interpreter
