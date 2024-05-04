@@ -13,15 +13,15 @@ def preprocessing(image):
     image_arr = np.expand_dims(image_arr, axis=0)  # Add batch dimension
     return image_arr.astype(np.float32)  # Ensure float32 dtype for tf.lite.Interpreter
 
-model_path="skin_disease_model8classes1.tflite"
+model_path="best_model_eff.tflite"
 # Initialize the TensorFlow Lite Interpreter with the model
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-classes = ['Bacterial Infections- cellulitis', 'Bacterial Infections- impetigo', 'Fungal Infections-athlete-foot', 'Fungal Infections-nail-fungus', 'Fungal Infections-ringworm', 'Parasitic Infections-cutaneous-larva-migrans', 'Viral skin infections-chickenpox', 'Viral skin infections-shingles']
-thresholds = [Decimal('.87'), Decimal('.97'), Decimal('.98'), Decimal('.91'), Decimal('.93'), Decimal('.92'), Decimal('.99'), Decimal('.97')]
+classes = ['Acne and Rosacea Photos','Eczema Photos','Exanthems and Drug Eruptions','Scabies Lyme Disease and other Infestations and Bites','Tinea Ringworm Candidiasis and other Fungal Infections','Vasculitis Photos']
+thresholds =[Decimal('.99'), Decimal('.99'), Decimal('.99'), Decimal('.9999'), Decimal('.99'), Decimal('.99')]
 
 
 @app.route('/')
