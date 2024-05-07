@@ -64,7 +64,7 @@ def predict():
                 prediction = "No disease detected or normal skin."
             else:
                 prediction = classes[ind]
-            return render_template('index.html', prediction=prediction, image='static/IMG/', appName="Skin Disease Recognition Application")
+            return render_template('index.html', prediction=prediction, image='../static/IMG/018.jpg', appName="Skin Disease Recognition Application")
         except Exception as e:
             return render_template('index.html', prediction='Error: ' + str(e), appName="Skin Disease Recognition Application")
     else:
@@ -72,4 +72,5 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
