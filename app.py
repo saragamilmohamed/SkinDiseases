@@ -20,7 +20,7 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-classes = ['Acne and Rosacea Photos','Eczema Photos','Exanthems and Drug Eruptions','Scabies Lyme Disease and other Infestations and Bites','Tinea Ringworm Candidiasis and other Fungal Infections','Vasculitis Photos']
+classes = ['Acne and Rosacea ','Eczema ','Exanthems and Drug Eruptions','Scabies Lyme Disease and other Infestations and Bites','Tinea Ringworm Candidiasis and other Fungal Infections','Vasculitis']
 thresholds =[Decimal('.99'), Decimal('.99'), Decimal('.99'), Decimal('.9999'), Decimal('.99'), Decimal('.99')]
 
 
@@ -63,7 +63,7 @@ def predict():
             if max_prob < thresholds[ind]:
                 prediction = "No disease detected or normal skin."
             else:
-                prediction = classes[ind]
+                prediction = "You have "+classes[ind]
             return render_template('index.html', prediction=prediction, image='../static/IMG/018.jpg', appName="Skin Disease Recognition Application")
         except Exception as e:
             return render_template('index.html', prediction='Error: ' + str(e), appName="Skin Disease Recognition Application")
