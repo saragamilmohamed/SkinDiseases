@@ -13,7 +13,7 @@ def preprocessing(image):
     image_arr = np.expand_dims(image_arr, axis=0)  # Add batch dimension
     return image_arr.astype(np.float32)  # Ensure float32 dtype for tf.lite.Interpreter
 
-model_path="best_model_eff.tflite"
+model_path="best_model_eff_final.tflite"
 # Initialize the TensorFlow Lite Interpreter with the model
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
