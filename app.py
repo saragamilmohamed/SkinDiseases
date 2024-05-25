@@ -21,7 +21,7 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 classes = ['Acne and Rosacea ','Eczema ','Exanthems and Drug Eruptions','Scabies Lyme Disease and other Infestations and Bites','Tinea Ringworm Candidiasis and other Fungal Infections','Vasculitis']
-thresholds =[Decimal('.99'), Decimal('.99'),  Decimal('.999999'), Decimal('.99999'), Decimal('.9'), Decimal('.999')]
+thresholds =[Decimal('.99'), Decimal('.99'),  Decimal('.99'), Decimal('.99999'), Decimal('.9'), Decimal('.999')]
 
 
 @app.route('/')
